@@ -1,4 +1,3 @@
-// import shortid from "shortid";
 import { createAction } from "@reduxjs/toolkit";
 
 const fetchContactsRequest = createAction("contacts/fetchContactsRequest");

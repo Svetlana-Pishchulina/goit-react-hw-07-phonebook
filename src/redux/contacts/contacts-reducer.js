@@ -39,21 +39,6 @@ const errorReduser = createReducer(null, {
   [actions.saveContactError]: (_, action) => action.payload,
   [actions.saveContactRequest]: () => null,
 });
-//   (
-//     {
-//     contacts:[],
-//   isLoading:true,
-//   error:null
-// }))
-
-// const contactsReduser = createReducer([], {
-//   [actions.saveContactAction]: (state, action) => {
-//     return [...state, action.payload];
-//   },
-//   [actions.deleteContactAction]: (state, action) => {
-//     return state.filter((contact) => contact.id !== action.payload);
-//   },
-// });
 
 const filterReducer = createReducer("", {
   [actions.updateFilterAction]: (_, action) => {
@@ -65,6 +50,5 @@ export default combineReducers({
   itemsReduser,
   isLoadingReduser,
   errorReduser,
-  // contactsReduser,
   filterReducer,
 });
