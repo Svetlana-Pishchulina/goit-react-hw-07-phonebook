@@ -1,6 +1,6 @@
 // const actionTypes = {
-//   SAVE_CONTACT: "saveConntact",
-//   DELETE_CONTACT: "deleteConntact",
+//   SAVE_CONTACT: "saveContact",
+//   DELETE_CONTACT: "deleteContact",
 //   UPDATE_FILTER: "updateFilter",
 // };
 // export default actionTypes;

@@ -1,8 +1,39 @@
 {
   "contacts": [
-    { "id": "id-1", "name": "Rosie Simpson", "number": "459-12-56" },
-    { "id": "id-2", "name": "Hermione Kline", "number": "443-89-12" },
-    { "id": "id-3", "name": "Eden Clements", "number": "645-17-79" },
-    { "id": "id-4", "name": "Annie Copeland", "number": "227-91-26" }
+    {
+      "id": "-m0W6mNEm",
+      "name": "Светлана Пищулина",
+      "number": "+80676495884"
+    },
+    {
+      "id": "E_Ehc4Qur",
+      "name": "alex",
+      "number": "+159159159"
+    },
+    {
+      "id": "YmhjL4D5w",
+      "name": "nataly",
+      "number": "+123123123"
+    },
+    {
+      "id": "_Zd7223u0",
+      "name": "iren",
+      "number": "+123123123"
+    },
+    {
+      "id": "LtoISmzIk",
+      "name": "leo",
+      "number": "+123123123"
+    },
+    {
+      "id": "mHm3QaFAl",
+      "name": "ann",
+      "number": "+123123123"
+    },
+    {
+      "id": "FXfJXZjff",
+      "name": "dina",
+      "number": "+123123123"
+    }
   ]
 }

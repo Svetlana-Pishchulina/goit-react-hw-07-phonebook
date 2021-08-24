@@ -1,4 +1,4 @@
-// export const getContactsReducer = (state) => state.contacts.contactsReduser;
+// export const getContactsReducer = (state) => state.contacts.;
 
 export const getFilterReducer = (state) => state.contacts.filterReducer;
 

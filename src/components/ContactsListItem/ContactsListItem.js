@@ -2,14 +2,16 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./ContactsListItem.module.css";
-import contactsActions from "../../redux/contacts/contacts-actions";
+import contactsActions from "redux/contacts/contacts-actions";
 import {
   // getContactsReducer,
   // getFilterReducer,
   getItems,
   getVisibleContacts,
-} from "../../redux/contacts/contacts-selection";
-import contactsOperations from "../../redux/contacts/contactsOperations";
+} from "redux/contacts/contacts-selection";
+import contactsOperations from "redux/contacts/contactsOperations";
+
+// import { contactsActions, contactsOperations } from "redux/contacts";
 
 const ContactsListItem = () => {
   // const contacts = useSelector((state) => {
@@ -29,10 +31,10 @@ const ContactsListItem = () => {
   useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
 
   const onDeleteButtonClick = (id) =>
-    dispatch(contactsActions.deleteContactAction(id));
+    dispatch(contactsOperations.deleteContact(id));
 
   return (
-    items.length &&
+    // items.length &&
     visibleContacts.map(({ id, name, number }) => (
       <li className={styles.listItem} key={id}>
         {name}:{number}

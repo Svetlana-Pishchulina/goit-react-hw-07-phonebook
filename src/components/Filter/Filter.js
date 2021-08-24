@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./Filter.module.css";
-import contactsActions from "../../redux/contacts/contacts-actions";
-import { getFilterReducer } from "../../redux/contacts/contacts-selection";
+import contactsActions from "redux/contacts/contacts-actions";
+import { getFilterReducer } from "redux/contacts/contacts-selection";
 
 const Filter = () => {
   const value = useSelector(getFilterReducer);

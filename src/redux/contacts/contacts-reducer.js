@@ -7,17 +7,37 @@ const itemsReduser = createReducer([], {
   [actions.fetchContactsSuccess]: (state, action) => {
     return action.payload;
   },
+  [actions.deleteContactSuccess]: (state, action) => {
+    return state.filter((contact) => contact.id !== action.payload);
+  },
+  [actions.saveContactSuccess]: (state, action) => {
+    return [...state, action.payload];
+  },
 });
 
 const isLoadingReduser = createReducer(false, {
   [actions.fetchContactsRequest]: () => true,
   [actions.fetchContactsSuccess]: () => false,
   [actions.fetchContactsError]: () => false,
+
+  [actions.deleteContactRequest]: () => true,
+  [actions.deleteContactSuccess]: () => false,
+  [actions.deleteContactError]: () => false,
+
+  [actions.saveContactRequest]: () => true,
+  [actions.saveContactSuccess]: () => false,
+  [actions.saveContactError]: () => false,
 });
 
 const errorReduser = createReducer(null, {
   [actions.fetchContactsError]: (_, action) => action.payload,
   [actions.fetchContactsRequest]: () => null,
+
+  [actions.deleteContactError]: (_, action) => action.payload,
+  [actions.deleteContactRequest]: () => null,
+
+  [actions.saveContactError]: (_, action) => action.payload,
+  [actions.saveContactRequest]: () => null,
 });
 //   (
 //     {
@@ -26,14 +46,14 @@ const errorReduser = createReducer(null, {
 //   error:null
 // }))
 
-const contactsReduser = createReducer([], {
-  [actions.saveContactAction]: (state, action) => {
-    return [...state, action.payload];
-  },
-  [actions.deleteContactAction]: (state, action) => {
-    return state.filter((contact) => contact.id !== action.payload);
-  },
-});
+// const contactsReduser = createReducer([], {
+//   [actions.saveContactAction]: (state, action) => {
+//     return [...state, action.payload];
+//   },
+//   [actions.deleteContactAction]: (state, action) => {
+//     return state.filter((contact) => contact.id !== action.payload);
+//   },
+// });
 
 const filterReducer = createReducer("", {
   [actions.updateFilterAction]: (_, action) => {
@@ -45,6 +65,6 @@ export default combineReducers({
   itemsReduser,
   isLoadingReduser,
   errorReduser,
-  contactsReduser,
+  // contactsReduser,
   filterReducer,
 });
