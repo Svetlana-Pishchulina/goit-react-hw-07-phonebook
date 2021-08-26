@@ -2,14 +2,15 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./ContactsListItem.module.css";
-import {
-  // getItems,
-  getVisibleContacts,
-} from "redux/contacts/contacts-selection";
-import contactsOperations from "redux/contacts/contactsOperations";
+// import {
+//   // getItems,
+//   getVisibleContacts,
+// } from "redux/contacts/contacts-selection";
+// import contactsOperations from "redux/contacts/contactsOperations";
 
+import { contactsSelection, contactsOperations } from "redux/contacts";
 const ContactsListItem = () => {
-  const visibleContacts = useSelector(getVisibleContacts);
+  const visibleContacts = useSelector(contactsSelection.getVisibleContacts);
 
   const dispatch = useDispatch();
 

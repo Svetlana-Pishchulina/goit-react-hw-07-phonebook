@@ -1,4 +1,4 @@
-import shortid from "shortid";
+// import shortid from "shortid";
 
 import contactsActions from "./contacts-actions";
 import api from "../services/contacts-api";
@@ -18,6 +18,7 @@ const deleteContact = (id) => async (dispatch) => {
   dispatch(contactsActions.deleteContactRequest());
   try {
     const deleteContact = await api.deleteContact(id);
+    // console.log(deleteContact);
     dispatch(contactsActions.deleteContactSuccess(id));
   } catch (error) {
     dispatch(contactsActions.deleteContactError(error));
@@ -25,11 +26,15 @@ const deleteContact = (id) => async (dispatch) => {
 };
 
 const saveContact = (name, number) => async (dispatch) => {
-  const contact = { id: shortid.generate(), name, number };
+  const contact = {
+    // id: shortid.generate(),
+    name,
+    number,
+  };
   dispatch(contactsActions.saveContactRequest(contact));
   try {
     const contactToSave = await api.addContact(contact);
-    dispatch(contactsActions.saveContactSuccess(contact));
+    dispatch(contactsActions.saveContactSuccess(contactToSave.data));
   } catch (error) {
     dispatch(contactsActions.saveContactError(error));
   }
